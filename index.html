@@ -15,70 +15,82 @@
         .names { font-size: 2.8em; margin: 15px 0; font-style: italic; font-weight: 700; line-height: 1.2; }
         .main-p { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 0 20px; }
 
-        /* --- БЛОК ФОТОГАЛЕРЕИ (ИНТЕРАКТИВ) --- */
-        .photo-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 40px 0; padding: 0 10px; }
-        .photo-item { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 3px solid #f9f6f0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.4s ease, box-shadow 0.4s ease; cursor: pointer; }
-        .photo-item:hover { transform: scale(1.08) rotate(2deg); box-shadow: 0 10px 25px rgba(176, 141, 87, 0.3); z-index: 10; }
+        /* --- ГАЛЕРЕЯ (РОВНАЯ СЕТКА) --- */
+        .photo-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+            margin: 40px 0; 
+            padding: 0 10px; 
+        }
+        .photo-item { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            border: 3px solid #f9f6f0; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            transition: transform 0.4s ease; 
+            cursor: pointer; 
+        }
+        .photo-item:hover { transform: scale(1.05); z-index: 10; }
 
-        /* --- БЛОК ТАЙМЕРА (ИНТЕРАКТИВ) --- */
+        /* --- ТАЙМЕР --- */
         .timer-section { background: #b08d57; color: white; padding: 30px; border-radius: 8px; margin: 40px 0; box-shadow: inset 0 0 20px rgba(0,0,0,0.1); }
         .timer-section h3 { color: white; margin-top: 0; font-size: 1.5em; text-transform: uppercase; letter-spacing: 2px; }
-        #countdown { display: flex; justify-content: center; gap: 15px; font-family: 'Montserrat', sans-serif; }
+        #countdown { display: flex; justify-content: center; gap: 15px; }
         .time-block { text-align: center; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 5px; min-width: 60px; }
         .time-block span { display: block; font-size: 2.5em; font-weight: 600; line-height: 1; }
         .time-block em { display: block; font-size: 0.8em; font-style: normal; text-transform: uppercase; opacity: 0.8; margin-top: 5px; }
 
+        /* --- ДЕТАЛИ --- */
         .details-box { background: #f9f6f0; padding: 30px; border-radius: 8px; margin: 40px 0; border: 1px solid #eae1d0; }
         .detail-item { margin: 20px 0; font-size: 1.1em; }
         .detail-item strong { display: block; color: #b08d57; font-family: 'Playfair Display', serif; font-size: 1.4em; margin-bottom: 5px; }
 
-        /* --- КНОПКИ (ИНТЕРАКТИВ) --- */
-        .btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px; }
-        .btn { display: inline-block; padding: 16px 35px; color: white; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; cursor: pointer; border: none; font-size: 16px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 300px; }
+        /* --- КНОПКИ --- */
+        .btn-group { display: flex; flex-direction: column; gap: 10px; align-items: center; margin-top: 30px; }
+        .btn { display: inline-block; padding: 15px 25px; color: white; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; cursor: pointer; border: none; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; width: 100%; max-width: 300px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn-map { background-color: #b08d57; margin-bottom: 10px; }
+        .btn-map:hover { background-color: #8e6f42; transform: translateY(-3px); }
         
-        .btn-map { background-color: #b08d57; }
-        .btn-map:hover { background-color: #8e6f42; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(176, 141, 87, 0.4); }
+        .contact-row { display: flex; gap: 10px; width: 100%; max-width: 400px; justify-content: center; }
+        .btn-vk-male { background-color: #0077FF; flex: 1; }
+        .btn-vk-female { background-color: #f06292; flex: 1; }
+        .btn-vk-male:hover, .btn-vk-female:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        .btn-rsvp { background-color: #333; }
-        .btn-rsvp:hover { background-color: #555; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .btn-confetti { background: none; color: #b08d57; border: 2px solid #b08d57; margin-top: 25px; font-size: 12px; padding: 8px 15px; box-shadow: none; width: auto; }
 
-        .btn-confetti { background: none; color: #b08d57; border: 2px solid #b08d57; box-shadow: none; margin-top: 20px; font-size: 14px; padding: 10px 20px; }
-        .btn-confetti:hover { background: #b08d57; color: white; }
-
-        /* Анимация появления */
-        .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInAnim 1.3s forwards; animation-delay: 0.2s; }
-        @keyframes fadeInAnim { to { opacity: 1; transform: translateY(0); } }
-
-        footer { margin-top: 50px; font-style: italic; color: #999; font-size: 0.9em; border-top: 1px solid #eee; padding-top: 20px; }
+        footer { margin-top: 50px; font-style: italic; color: #999; border-top: 1px solid #eee; padding-top: 20px; }
         #confetti-canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 999; }
         
-        /* Мобильная адаптация */
-        @media (max-width: 500px) { .names { font-size: 2em; } .time-block span { font-size: 1.8em; } .time-block { padding: 8px; min-width: 45px; } }
+        @media (max-width: 500px) { 
+            .names { font-size: 2em; } 
+            .contact-row { flex-direction: column; align-items: center; }
+            .btn { max-width: 280px; }
+            .photo-gallery { grid-template-columns: 1fr; } 
+        }
     </style>
 </head>
 <body>
 
 <canvas id="confetti-canvas"></canvas>
 
-<div class="container fade-in">
+<div class="container">
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Diploma" class="header-decor">
-    
     <div class="event-title">Торжественное приглашение</div>
     
     <p class="main-p">Дорогие наши родные, близкие, друзья и наставники!</p>
-    
-    <p class="main-p">В жизни нашей семьи произошло долгожданное и очень важное событие — мы оба успешно завершили обучение и получили дипломы о высшем образовании! Мы будем счастливы разделить этот радостный момент с вами.</p>
+    <p class="main-p">В жизни каждой семьи бывают моменты, которые хочется разделить с самыми близкимии и дорогими людьми. Для нас таким моментом стало успешное окончание учебы и получение дипломой о высшем образовании. В связи с этим, мы имеем честь пригласить вас на торжественный банкет, посвященный этому знаменательному событию. Мы будем счастливы видеть вас и наших гостей, разделить с вами нашу радость и поблагодарить за вашу поддержку и тепло в важном пути</p>
 
-    <div class="names">
-        Кара-Сал Ангырак <br> & <br> Кара-Сал Алдынай
-    </div>
+    <div class="names">Кара-Сал Ангырак <br> & <br> Кара-Сал Алдынай</div>
 
     <h3>Наш путь в фотографиях</h3>
     <div class="photo-gallery">
-        <img src="https://ibb.co/pBJ8Rrjg" class="photo-item">
-        <img src="https://via.placeholder.com/400x400.png?text=Ваше+Фото+2" alt="Фото 2" class="photo-item">
-        <img src="https://ibb.co/HTXTtdWw" class="photo-item">
-        <img src="https://ibb.co/y10gqLw" alt="Фото 4" class="photo-item">
+        <img src="https://i.ibb.co/Q3f3F6jk/image.jpg" class="photo-item">
+        <img src="https://i.ibb.co/MxM4G5kb/image.jpg" class="photo-item">
+        <img src="https://i.ibb.co/N2729S8D/2.jpg" class="photo-item">
+        <img src="https://i.ibb.co/Pnx1gB7/image.jpg" class="photo-item">
     </div>
 
     <div class="timer-section">
@@ -92,86 +104,44 @@
     </div>
 
     <div class="details-box">
-        <div class="detail-item">
-            <strong>КОГДА</strong>
-            26 апреля 2026 года
-        </div>
-        <div class="detail-item">
-            <strong>ВРЕМЯ</strong>
-            Будет сообщено дополнительно
-        </div>
-        <div class="detail-item">
-            <strong>ГДЕ</strong>
-            Банкетный зал «Аристократ»<br>
-            г. Кызыл, ул. Каа-Хем, 110
-        </div>
+        <div class="detail-item"><strong>КОГДА</strong> 26 апреля 2026 года</div>
+        <div class="detail-item"><strong>ВРЕМЯ</strong> 15:00</div>
+        <div class="detail-item"><strong>ГДЕ</strong> Банкетный зал «Аристократ»<br>г. Кызыл, ул. Каа-Хем, 110</div>
     </div>
 
     <div class="btn-group">
-        <button class="btn btn-map" onclick="window.open('https://yandex.ru/maps/?text=Кызыл+Каа-Хем+110+Аристократ')">
-            📍 Посмотреть на карте
-        </button>
+        <button class="btn btn-map" onclick="window.open('https://yandex.ru/maps/?text=Кызыл+Каа-Хем+110+Аристократ')">📍 Посмотреть на карте</button>
         
-        <button class="btn btn-rsvp" onclick="window.open('https://wa.me/79991234567?text=Привет!%20Я%20подтверждаю%20своё%20участие%20в%20банкете%2026%20апреля!')">
-            ✅ Я приду! (Подтвердить)
-        </button>
+        <p style="margin: 15px 0 5px; color: #777; font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px;">Подтвердить участие в VK:</p>
+        
+        <div class="contact-row">
+            <button class="btn btn-vk-male" onclick="window.open('https://vk.com/ksangyr')">🔵 Ангыраку</button>
+            
+            <button class="btn btn-vk-female" onclick="window.open('https://vk.com/aldshh')">🌸 Алдынай</button>
+        </div>
     </div>
 
     <button class="btn btn-confetti" onclick="startConfetti()">✨ Больше радости!</button>
 
-    <footer>
-        С уважением и благодарностью, семья Кара-Сал
-    </footer>
+    <footer>С уважением, семья Кара-Сал</footer>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script>
-    // --- НАСТРОЙКА ТАЙМЕРА ---
-    const targetDate = new Date('April 26, 2026 18:00:00').getTime(); // Установите примерное время начала (например, 18:00)
-
+    const targetDate = new Date('April 26, 2026 15:00:00').getTime();
     function updateCountdown() {
         const now = new Date().getTime();
         const gap = targetDate - now;
-
-        if (gap < 0) {
-            document.getElementById('countdown').innerHTML = "<h3>Ура! Этот день настал!</h3>";
-            return;
-        }
-
-        const second = 1000;
-        const minute = second * 60;
-        const hour = minute * 60;
-        const day = hour * 24;
-
-        const d = Math.floor(gap / day);
-        const h = Math.floor((gap % day) / hour);
-        const m = Math.floor((gap % hour) / minute);
-        const s = Math.floor((gap % minute) / second);
-
-        document.getElementById('days').innerText = d < 10 ? '0' + d : d;
-        document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
-        document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
-        document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+        if (gap < 0) { document.getElementById('countdown').innerHTML = "<h3>Ура! Встречаемся!</h3>"; return; }
+        const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
+        document.getElementById('days').innerText = Math.floor(gap / day);
+        document.getElementById('hours').innerText = Math.floor((gap % day) / hour);
+        document.getElementById('minutes').innerText = Math.floor((gap % hour) / minute);
+        document.getElementById('seconds').innerText = Math.floor((gap % minute) / second);
     }
-
     setInterval(updateCountdown, 1000);
-    updateCountdown(); // Первичный запуск
-
-    // --- НАСТРОЙКА КОНФЕТТИ ---
-    function startConfetti() {
-        confetti({
-            particleCount: 200,
-            spread: 90,
-            origin: { y: 0.6 },
-            colors: ['#b08d57', '#d4af37', '#ffffff', '#333333']
-        });
-    }
-
-    // Автозапуск конфетти при загрузке
-    window.onload = () => {
-        setTimeout(startConfetti, 1000);
-    };
+    function startConfetti() { confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#b08d57', '#ffffff'] }); }
+    window.onload = () => { setTimeout(startConfetti, 1000); };
 </script>
-
 </body>
 </html>
